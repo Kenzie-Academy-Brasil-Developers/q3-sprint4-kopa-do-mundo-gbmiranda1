@@ -11,9 +11,7 @@ UPDATE kopas SET pts = 105 WHERE selecao = 'Espanha';
 
 SELECT * FROM kopas
 
-DROP TABLE IF EXISTS estadios;
-
-CREATE TABLE estadios (
+CREATE TABLE if NOT EXISTS estadios(
   id BIGSERIAL PRIMARY KEY,
   edicao VARCHAR,
   ano VARCHAR(4),
@@ -55,12 +53,7 @@ SELECT * FROM estadios WHERE (publico_pagante > 50000 AND publico_pagante < 1000
 
 SELECT * FROM estadios WHERE estadio LIKE '%y';
 
-ALTER TABLE estadios
-
-ALTER COLUMN 
-  ano TYPE INTEGER 
-
-USING ano::INTEGER;
+ALTER TABLE estadios ALTER COLUMN ano TYPE INTEGER USING ano::INTEGER;
 
 SELECT * FROM estadios;
 

@@ -1,8 +1,8 @@
-CREATE TABLE if NOT EXISTS kopas{
+CREATE TABLE if NOT EXISTS kopas(
     id  BIGSERIAL PRIMARY KEY,
     selecao varchar(128) unique,
     qnt_copas integer
-}
+);
 
 INSERT INTO
     kopas(selecao, qnt_copas)
